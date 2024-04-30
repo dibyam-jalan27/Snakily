@@ -21,7 +21,7 @@ class LinkedList {
 }
 
 function Board2() {
-  const [gameState, setGameState] = useState("running");
+  const [gameState, setGameState] = useState("Start");
   const [score, setScore] = useState(0);
   const [level, setLevel] = useState(1);
   const [board, setBoard] = useState(createBoard(ROW, COL));
@@ -99,7 +99,7 @@ function Board2() {
       const { key } = e;
       // console.log(key);
       if (key === " ") {
-        if (gameState === "over") {
+        if (gameState === "over" || gameState === "Start") {
           setGameState("running");
           setSnakeCells(() => new Map());
           generateSnake();
@@ -123,6 +123,15 @@ function Board2() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [gameState, board]);
+
+  if (gameState === "Start") {
+    return (
+      <div className="game-over">
+        <h1>Snake Game</h1>
+        <h3>Press Space to Start</h3>
+      </div>
+    );
+  }
 
   if (gameState === "over") {
     return (
