@@ -7,3 +7,9 @@ export const Direction = {
   DOWN: "DOWN",
   LEFT: "LEFT",
 };
+
+export const Difficulty = {
+  EASY: 500,
+  MEDIUM: 300,
+  HARD: 100,
+};

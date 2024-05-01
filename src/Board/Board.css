@@ -33,3 +33,10 @@
 .cell-blue {
   background-color: blue;
 }
+
+.difficulty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: full;
+}
